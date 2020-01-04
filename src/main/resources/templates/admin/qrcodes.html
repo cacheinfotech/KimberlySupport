@@ -41,17 +41,9 @@
                     <div class="card">
                         <div class="card-body">
                             <h1 class="card-title">Sample QR Code List</h1>
-                            <h2>QR data contains url to register device</h2>
                             <div class="row">
-                                <div class="col-md-3" th:each="i : ${#numbers.sequence( 0, 3)}">
-                                    <img th:src="${urls.get(i)}" alt="QR code">
-                                </div>
-                            </div>
-                            <br>
-                            <h2>QR data contains url to file complaint</h2>
-                            <div class="row">
-                                <div class="col-md-3" th:each="i : ${#numbers.sequence( 4, 7)}">
-                                    <img th:src="${urls.get(i)}" alt="QR code">
+                                <div class="col-md-3" th:each="url :${urls}">
+                                    <img th:src="${url}" alt="QR code">
                                 </div>
                             </div>
                         </div>

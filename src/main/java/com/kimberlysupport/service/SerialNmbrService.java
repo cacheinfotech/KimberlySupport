@@ -26,21 +26,17 @@ public class SerialNmbrService {
   public List<String> generateNmbers(HttpServletRequest request){
       String qrUrl ="https://chart.googleapis.com/chart?chs=200x200&cht=qr&choe=UTF-8&chl=";
 
-      String hostName = "http://192.168.1.91:8080";
-     // String hostName = request.getRequestURL().toString();
-      //hostName = hostName.substring(0,hostName.indexOf("/admin"));
-      String dev= hostName+"/user/addDevice?srnmbr=";
-      hostName= hostName+"/support?srnmbr=";
+    //  String hostName = "http://192.168.1.91:8080";
+      String hostName = request.getRequestURL().toString();
+      hostName = hostName.substring(0,hostName.indexOf("/admin"));
+      String dev= hostName+"/device?srnmbr=";
+    //  hostName= hostName+"/support?srnmbr=";
 
 
       List<String> srs = new ArrayList<>();
 
-      for(long i = 1 ; i<=4;i++){
+      for(long i = 1 ; i<=8;i++){
         srs.add(qrUrl+dev+generatePin(i,"KMB"));
-      }
-
-     for(long i = 1 ; i<=4;i++){
-        srs.add(qrUrl+hostName+generatePin(i,"KMB"));
       }
 
         return srs;
@@ -89,6 +85,17 @@ public class SerialNmbrService {
             mv.addObject("msg","Something went wrong");
         }
         return mv;
+    }
+
+    public ModelAndView checkDevice(String srnmbr) {
+      ModelAndView mv = new ModelAndView();
+      Dispenser dispenser = dispenserRepository.findBySerialNumber(srnmbr);
+      if(dispenser==null){
+          mv.setViewName("redirect:/user/addDevice?srnmbr="+srnmbr);
+      }else{
+          mv.setViewName("redirect:/support?srnmbr="+srnmbr);
+      }
+      return mv;
     }
 }
 

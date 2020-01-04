@@ -30,6 +30,10 @@ public class RequestController {
         return new ModelAndView("redirect:/" + role);
     }
 
+    @GetMapping("/device")
+    public ModelAndView device(@RequestParam("srnmbr") String srnmbr){
+        return  serialNmbrService.checkDevice(srnmbr);
+    }
     @GetMapping("/support")
     public ModelAndView support(@RequestParam("srnmbr") String srnmbr){
         return serialNmbrService.getSerialDetails(srnmbr);
