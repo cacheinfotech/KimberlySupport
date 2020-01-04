@@ -23,43 +23,27 @@
                     <div class="card-body">
                         <!-- ========[form]====== -->
                         <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Serial No.</label>
-                                        <input type="text" name="" class="form-control" th:readonly="${srnmbr}" th:value="${srnmbr}">
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Location</label>
-                                        <textarea class="form-control"  rows="2">
 
-                                    </textarea>
+                            <form action="/user/addDevice" method="post">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Serial No.</label>
+                                            <input type="text" name="serialNumber" required class="form-control" th:readonly="${srnmbr}" th:value="${srnmbr}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Location</label>
+                                            <textarea class="form-control" name="address" required  rows="2"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <input type="submit" class="btn btn-success btn-block">
                                     </div>
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Select Option</label>
-                                        <select class="form-control">
-                                            <option>Select ...</option>
-                                            <option>Option1</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label>Textarea</label>
-                                        <textarea class="form-control" rows="4">
+                            </form>
 
-                                   </textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <input type="submit" class="btn btn-success btn-block">
-                                </div>
-
-                            </div>
                         </div>
                     </div>
                     <!-- ============== -->

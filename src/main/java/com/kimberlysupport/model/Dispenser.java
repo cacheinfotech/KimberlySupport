@@ -3,6 +3,7 @@ package com.kimberlysupport.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,6 +14,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @NoArgsConstructor
+@ToString
 public class Dispenser implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +22,7 @@ public class Dispenser implements Serializable {
 
     @Column(unique = true)
     private String uniqueId= UUID.randomUUID().toString();
-
+    @Column(unique = true)
     private String serialNumber;
 
     private String address;

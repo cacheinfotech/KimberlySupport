@@ -5,4 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface DispenserRepository extends JpaRepository<Dispenser,Long> {
 
+    Dispenser findBySerialNumber(String srnmbr);
 }
