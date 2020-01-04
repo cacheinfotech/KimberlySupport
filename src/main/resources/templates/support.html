@@ -17,14 +17,44 @@
     <div class="auth-wrapper d-flex no-block justify-content-center align-items-center bg-dark">
         <div class="auth-box bg-dark border-top border-secondary">
 
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label>Serial Number</label>
-                        <input type="text" readonly th:value="${dispenser}">
+            <form th:if="${dispenser}" action="/fileComplain" method="post">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Serial No.</label>
+                            <input type="text" name="serialNumber" required class="form-control" readonly th:value="${dispenser.serialNumber}">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Location</label>
+                            <textarea class="form-control" name="address" required readonly  rows="2" th:text="${dispenser.address}"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Problem</label>
+                            <select class="form-control" name="problem" required>
+                                <option value="">--Select--</option>
+                                <option>Broken</option>
+                                <option>Stucked</option>
+                                <option>Blank</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea class="form-control" name="description" required  rows="2"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <input type="submit" class="btn btn-success btn-block">
                     </div>
                 </div>
-            </div>
+            </form>
+            <h1 th:if="${msg}" th:text="${msg}"></h1>
         </div>
     </div>
 

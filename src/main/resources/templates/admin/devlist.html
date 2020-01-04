@@ -10,8 +10,8 @@
     </div>
 </div>
 <div id="main-wrapper">
-   <div th:replace="frag/parts :: top-nav"></div>
-   <div th:replace="frag/parts :: left-menu"></div>
+    <div th:replace="frag/parts :: top-nav"></div>
+    <div th:replace="frag/parts :: left-menu"></div>
     <!--=====================================================[HOME]==================================================================-->
     <div class="page-wrapper">
         <div class="page-breadcrumb">
@@ -47,20 +47,11 @@
                                         <th>#</th>
                                         <th>Serial No.</th>
                                         <th>Address</th>
-                                        <th>Problem</th>
-                                        <th>Description</th>
-                                        <th>Date</th>
-                                        <th>Action</th>
                                     </tr>
-                                    <tr th:each="comp :${@complainRepository.findAll()}">
-                                        <td th:text="${comp.id}"></td>
-                                        <td th:text="${comp.dispenser.serialNumber}"></td>
-                                        <td th:text="${comp.dispenser.address}"></td>
-                                        <td th:text="${comp.problem}"></td>
-                                        <td th:text="${comp.description}"></td>
-                                        <td th:text="${@helperMethod.convertDateToStr(comp.createdOn,'dd/MM/yyyy')}"></td>
-                                        <td></td>
-
+                                    <tr th:each="dev,c : ${devices}">
+                                        <td th:text="${c.count}"></td>
+                                        <td th:text="${dev.serialNumber}"></td>
+                                        <td th:text="${dev.address}"></td>
                                     </tr>
                                 </table>
                             </div>
@@ -76,6 +67,6 @@
     </div>
 </div>
 
-  <div th:replace="frag/parts :: footer"></div>
+<div th:replace="frag/parts :: footer"></div>
 </body>
 </html>

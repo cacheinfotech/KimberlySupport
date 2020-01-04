@@ -24,7 +24,7 @@ public class AuthController {
     @Autowired
     private SecurityService securityService;
 
-    @RequestMapping(value = {"/", "/login"}, method = RequestMethod.GET)
+    @RequestMapping(value="/login", method = RequestMethod.GET)
     public String login(Model model, String error, String logout, Principal principal) {
 
         if (principal != null)
