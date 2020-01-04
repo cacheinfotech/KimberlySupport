@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="frag/parts :: header-links">
+</head>
+<body>
+<div class="preloader">
+    <div class="lds-ripple">
+        <div class="lds-pos"></div>
+        <div class="lds-pos"></div>
+    </div>
+</div>
+<div id="main-wrapper">
+   <div th:replace="frag/parts :: top-nav"></div>
+   <div th:replace="frag/parts :: left-menu"></div>
+    <!--=====================================================[HOME]==================================================================-->
+    <div class="page-wrapper">
+        <div class="page-breadcrumb">
+            <div class="row">
+                <div class="col-12 d-flex no-block align-items-center">
+                    <h4 class="page-title">Dashboard</h4>
+                    <div class="ml-auto text-right">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Library</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--===============================================================-->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <div class="row">
+                <div class="col-12">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Complaint List</h5>
+                            <div class="table-responsive">
+                                <table id="zero_config" class="table table-striped table-bordered">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Serial No.</th>
+                                        <th>Company/Hotel</th>
+                                        <th>Address</th>
+                                        <th>Problem</th>
+                                        <th>Date</th>
+                                        <th>Action</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>ABCD1234</td>
+                                        <td>Abcd Pvt Ltd.</td>
+                                        <td>A-18, sector- 59 Delhi</td>
+                                        <td>Not working</td>
+                                        <td>1/1/2020</td>
+                                        <td>
+                                            <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i
+                                                    class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                            <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i
+                                                    class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>EFGH44</td>
+                                        <td>BCDFF Pvt Ltd.</td>
+                                        <td>B-16, sector- 59 Delhi</td>
+                                        <td>Broken</td>
+                                        <td>2/1/2020</td>
+                                        <td>
+                                            <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i
+                                                    class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                            <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i
+                                                    class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>MKRE134</td>
+                                        <td>MCNDD Pvt Ltd.</td>
+                                        <td>M-18, sector- 79 Noida</td>
+                                        <td>Stucked</td>
+                                        <td>3/1/2020</td>
+                                        <td>
+                                            <button data-toggle="tooltip" title="Edit" class="pd-setting-ed"><i
+                                                    class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                                            <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i
+                                                    class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Recent comment and chats -->
+        <!-- ============================================================== -->
+    </div>
+</div>
+
+  <div th:replace="frag/parts :: footer"></div>
+</body>
+</html>

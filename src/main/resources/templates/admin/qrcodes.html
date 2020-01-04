@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="frag/parts :: header-links">
+</head>
+<body>
+<div class="preloader">
+    <div class="lds-ripple">
+        <div class="lds-pos"></div>
+        <div class="lds-pos"></div>
+    </div>
+</div>
+<div id="main-wrapper">
+    <div th:replace="frag/parts :: top-nav"></div>
+    <div th:replace="frag/parts :: left-menu"></div>
+    <!--=====================================================[HOME]==================================================================-->
+    <div class="page-wrapper">
+        <div class="page-breadcrumb">
+            <div class="row">
+                <div class="col-12 d-flex no-block align-items-center">
+                    <h4 class="page-title">Dashboard</h4>
+                    <div class="ml-auto text-right">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Library</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--===============================================================-->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <div class="row">
+                <div class="col-12">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Sample QR Code List</h5>
+
+                            <div class="row">
+                                <div class="col-md-3" th:each="url : ${urls}">
+                                    <img th:src="${url}" alt="QR code">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Recent comment and chats -->
+        <!-- ============================================================== -->
+    </div>
+</div>
+
+<div th:replace="frag/parts :: footer"></div>
+</body>
+</html>
