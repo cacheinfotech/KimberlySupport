@@ -1,82 +1,46 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-
-    <link href="/assets/css/style.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
-<body>
+<body class="bg-dark">
 <!--==============================================-->
-<div class="auth-wrapper  bg-dark">
-    <div class="preloader">
-        <div class="lds-ripple">
-            <div class="lds-pos"></div>
-            <div class="lds-pos"></div>
-        </div>
-    </div>
-    <div class="container-fluid">
+<div class="bg-dark">
+    <div class="container">
         <div class="row">
             <div class="col-md-4"></div>
-
             <div class="col-md-4">
-                <div class="card" style="top:60px">
-                    <div class="card-header">Add Device</div>
+                <div class="card" style="top:100px">
+                    <div class="card-header"><h5 class="text-center">Register Device</h5></div>
                     <div class="card-body">
-                        <!-- ========[form]====== -->
-                        <div class="container">
-
-                            <form action="/user/addDevice" method="post">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Serial No.</label>
-                                            <input type="text" name="serialNumber" required class="form-control" th:readonly="${srnmbr}" th:value="${srnmbr}">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label>Location</label>
-                                            <textarea class="form-control" name="address" required  rows="2"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <input type="submit" class="btn btn-success btn-block">
+                        <form action="/user/addDevice" method="post">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Serial No.</label>
+                                        <input type="text" name="serialNumber" required class="form-control" th:readonly="${srnmbr}" th:value="${srnmbr}">
                                     </div>
                                 </div>
-                            </form>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Location</label>
+                                        <textarea class="form-control" name="address" required  rows="2"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-success btn-block">
+                                </div>
+                            </div>
+                        </form>
 
-                        </div>
                     </div>
-                    <!-- ============== -->
                 </div>
             </div>
+            <div class="col-md-4"></div>
         </div>
     </div>
-    <!-- ============== -->
-    <div class="col-md-4"></div>
 </div>
-
-
-
-<!--===================================-->
-<script src="/assets/libs/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap tether Core JavaScript -->
-<script src="/assets/libs/popper.js/dist/umd/popper.min.js"></script>
-<script src="/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-<script>
-    $('[data-toggle="tooltip"]').tooltip();
-    $(".preloader").fadeOut();
-    // ==============================================================
-    // Login and Recover Password
-    // ==============================================================
-    $('#to-recover').on("click", function() {
-        $("#loginform").slideUp();
-        $("#recoverform").fadeIn();
-    });
-    $('#to-login').click(function(){
-
-        $("#recoverform").hide();
-        $("#loginform").fadeIn();
-    });
-</script>
 </body>
 </html>

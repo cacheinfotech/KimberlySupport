@@ -1,78 +1,64 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html dir="ltr" lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
-    <link href="./assets/css/style.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
-<body>
+<body class="bg-dark">
 <!--==============================================-->
-<div class="main-wrapper">
-    <div class="preloader">
-        <div class="lds-ripple">
-            <div class="lds-pos"></div>
-            <div class="lds-pos"></div>
-        </div>
-    </div>
-
-    <div class="auth-wrapper d-flex no-block justify-content-center align-items-center bg-dark">
-        <div class="auth-box bg-dark border-top border-secondary">
-
-            <form th:if="${dispenser}" action="/fileComplain" method="post">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label>Serial No.</label>
-                            <input type="text" name="serialNumber" required class="form-control" readonly th:value="${dispenser.serialNumber}">
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label>Location</label>
-                            <textarea class="form-control" name="address" required readonly  rows="2" th:text="${dispenser.address}"></textarea>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label>Problem</label>
-                            <select class="form-control" name="problem" required>
-                                <option value="">--Select--</option>
-                                <option>Broken</option>
-                                <option>Stucked</option>
-                                <option>Blank</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label>Description</label>
-                            <textarea class="form-control" name="description" required  rows="2"></textarea>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <input type="submit" class="btn btn-success btn-block">
+<div class="bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="card" style="top:100px">
+                    <div class="card-header"><h5 class="text-center">Complaint Form</h5></div>
+                    <div class="card-body">
+                        <form th:if="${dispenser}" action="/fileComplain" method="post">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Serial No.</label>
+                                        <input type="text" name="serialNumber" required class="form-control" readonly th:value="${dispenser.serialNumber}">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Location</label>
+                                        <textarea class="form-control" name="address" required readonly  rows="2" th:text="${dispenser.address}"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Problem</label>
+                                        <select class="form-control" name="problem" required>
+                                            <option value="">--Select--</option>
+                                            <option>Broken</option>
+                                            <option>Stucked</option>
+                                            <option>Blank</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea class="form-control" name="description" required  rows="2"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="submit" class="btn btn-success btn-block">
+                                </div>
+                            </div>
+                        </form>
+                        <h1 th:if="${msg}" th:text="${msg}"></h1>
                     </div>
                 </div>
-            </form>
-            <h1 th:if="${msg}" th:text="${msg}"></h1>
+            </div>
+            <div class="col-md-4"></div>
         </div>
     </div>
-
 </div>
-<!--===================================-->
-<script src="./assets/libs/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap tether Core JavaScript -->
-<script src="./assets/libs/popper.js/dist/umd/popper.min.js"></script>
-<script src="./assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-<script>
-    $('[data-toggle="tooltip"]').tooltip();
-    $(".preloader").fadeOut();
-
-    $('#to-recover').on("click", function() {
-        $("#loginform").slideUp();
-        $("#recoverform").fadeIn();
-    });
-
-</script>
 </body>
 </html>
