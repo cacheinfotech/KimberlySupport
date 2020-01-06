@@ -6,19 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon.png">
-    <title>Matrix Template - The Ultimate Multipurpose admin template</title>
+    <title>Admin</title>
     <!-- Custom CSS -->
-    <link href="/assets/libs/flot/css/float-chart.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="/assets/css/style.min.css" rel="stylesheet">
+    <link href="/assets/css/style.min.css" rel="stylesheet" type="text/css">
+
 </head>
 
 <header th:fragment="top-nav" class="topbar" data-navbarbg="skin5">
     <nav class="navbar top-navbar navbar-expand-md navbar-dark">
         <div class="navbar-header" data-logobg="skin5">
             <!-- This is for the sidebar toggle which is visible on mobile only -->
-            <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i
-                    class="ti-menu ti-close"></i></a>
+            <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)">
+                <i class="ti-menu ti-close"></i></a>
             <!-- ============================================================== -->
             <!-- Logo -->
             <!-- ============================================================== -->
@@ -58,7 +57,7 @@
             <ul class="navbar-nav float-left mr-auto">
                 <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light"
                                                           href="javascript:void(0)" data-sidebartype="mini-sidebar"><i
-                        class="mdi mdi-menu font-24"></i></a></li>
+                        class="fa fa-align-justify"></i></a></li>
 
 
             </ul>
@@ -71,7 +70,7 @@
                 <!-- ============================================================== -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-bell font-24"></i>
+                       aria-haspopup="true" aria-expanded="false"> <i class="fa fa-bell"></i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Action</a>
@@ -89,7 +88,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2"
                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i
-                            class="font-24 mdi mdi-comment-processing"></i>
+                            class="fa fas fa-comment-alt"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown"
                          aria-labelledby="2">
@@ -186,27 +185,27 @@
     <div class="scroll-sidebar">
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav">
-            <ul id="sidebarnav" class="p-t-30">re
+            <ul id="sidebarnav" class="p-t-30">
                 <li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link"
                                             href="/admin" aria-expanded="false"><i
-                        class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
+                        class="fa fa-align-justify fa-2x"></i><span class="hide-menu">Dashboard</span></a></li>
 
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link"
                        href="/admin/device-list" aria-expanded="false">
-                        <i class="mdi mdi-chart-bar"></i>
+                        <i class="fa fas fa-desktop"></i>
                         <span class="hide-menu">Device List</span></a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link"
                        href="/admin/complaint-list" aria-expanded="false">
-                        <i class="mdi mdi-chart-bar"></i>
+                        <i class="fa fas fa-users"></i>
                         <span class="hide-menu">Complain List</span></a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link"
                        href="/admin/qrcodes" aria-expanded="false">
-                        <i class="mdi mdi-chart-bar"></i>
+                        <i class="fa fas fa-qrcode"></i>
                         <span class="hide-menu">Sample QR Codes</span></a>
                 </li>
 

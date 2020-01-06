@@ -1,8 +1,4 @@
-/*
-Template Name: Admin Template
-Author: Niravjoshi / Wrappixel
-File: scss
-*/
+
 /*******************************/
 /*******************************/
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800");
@@ -26,15 +22,16 @@ File: scss
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800");
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800");
 @import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800");
-@import url(icons/font-awesome/css/fontawesome-all.css);
-@import url(icons/simple-line-icons/css/simple-line-icons.css);
-@import url(icons/weather-icons/css/weather-icons.min.css);
-@import url(icons/themify-icons/themify-icons.css);
-@import url(icons/flag-icon-css/flag-icon.min.css);
-@import url(icons/material-design-iconic-font/css/materialdesignicons.min.css);
-@import url(icons/crypto-icons/cryptocoins.css);
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+/*@import url('/assets/css/icons/font-awesome/css/fontawesome-all.css');
+@import url(/assets/css/icons/simple-line-icons/css/simple-line-icons.css);
+@import url(/assets/css/icons/weather-icons/css/weather-icons.min.css);
+@import url(/assets/css/icons/themify-icons/themify-icons.css);
+@import url(/assets/css/icons/flag-icon-css/flag-icon.min.css);
+@import url(/assets/css/icons/material-design-iconic-font/css/materialdesignicons.min.css);
+@import url(/assets/css/icons/crypto-icons/cryptocoins.css);*/
 .search-box .app-search .form-control, .topbar .mega-dropdown .dropdown-menu {
-  border-radius: 0px; }
+  border-radius: 0px;}
 
 .topbar .dropdown-menu .with-arrow > span {
   transform: rotate(45deg);
@@ -14830,3 +14827,7 @@ File: scss
 @media (max-width: 991.98px) {
   .do-block {
     display: block !important; } }
+/*===============================*/
+.fa{
+  font-size:15px !important;
+}
